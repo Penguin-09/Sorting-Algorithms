@@ -1,0 +1,23 @@
+html {
+    font-family: "Poppins", sans-serif;
+}
+
+/* Remove number input spinner */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+select:hover {
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    transition: transform 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}

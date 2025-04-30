@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Visualized Sorting Algorithms</title>
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+        <!-- Poppins Font -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- CSS -->
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link rel="stylesheet" href="stylesheets/main.css" />
+    </head>
+    <body class="p-5 bg-gray-900 text-gray-400">
+        <div class="flex flex-col items-center">
+            <!-- Header -->
+            <div class="py-6">
+                <h1 class="text-4xl text-white">
+                    Visualized Sorting Algorithms
+                </h1>
+            </div>
+
+            <!-- Main -->
+            <main
+                class="flex flex-col items-center p-5 rounded-md bg-gray-800 shadow-xl w-4xl"
+            >
+                <h1 class="text-white"></h1>
+
+                <!-- Graph -->
+                <div
+                    class="flex justify-center items-end w-2/3 gap-1 p-1 bg-slate-700 rounded-md h-85"
+                    id="graph"
+                ></div>
+
+                <!-- Form -->
+                <form class="flex flex-col items-center pt-5 gap-3">
+                    <div class="flex flex-row gap-5">
+                        <!-- Data Size -->
+                        <div class="flex flex-col w-50 items-center gap-1">
+                            <label class="text-lg" for="dataSize"
+                                >Data size</label
+                            >
+                            <input
+                                class="w-full rounded-md text-center bg-slate-700 text-white"
+                                id="dataSize"
+                                name="dataSize"
+                                type="number"
+                                placeholder="100"
+                            />
+                        </div>
+
+                        <!-- Algorithm selection -->
+                        <div class="flex flex-col w-50 items-center gap-1">
+                            <label class="text-lg" for="algorithmType"
+                                >Algorithm</label
+                            >
+                            <select
+                                class="w-full rounded-md text-center bg-slate-700 text-white"
+                                name="algorithmType"
+                                id="algorithmType"
+                            >
+                                <option value="selectionSort">
+                                    Selection Sort
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <input
+                        class="py-2 px-4 rounded-md font-bold bg-sky-600 text-white"
+                        type="submit"
+                        value="Sort!"
+                    />
+                </form>
+            </main>
+        </div>
+
+        <!-- Footer -->
+        <footer class="flex justify-center p-1 pt-6">
+            <p>
+                &copy; 2025
+                <a
+                    class="underline underline-offset-2"
+                    href="https://vdburg.site/"
+                    target="_blank"
+                    >Son Bram van der Burg</a
+                >
+                | Made with
+                <a
+                    class="underline underline-offset-2"
+                    href="https://tailwindcss.com/"
+                    target="_blank"
+                    >TailwindCSS</a
+                >
+            </p>
+        </footer>
+
+        <script src="scripts/main.js" defer></script>
+    </body>
+</html>
