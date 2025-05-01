@@ -2,6 +2,14 @@ html {
     font-family: "Poppins", sans-serif;
 }
 
+#canvas {
+    gap: 1px;
+}
+
+#canvas:has(> :nth-child(101)) {
+    gap: 0;
+}
+
 /* Remove number input spinner */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -9,15 +17,12 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-select:hover {
-    cursor: pointer;
-}
-
-input[type="submit"] {
+/* Form */
+.customHover {
     transition: transform 0.3s ease;
 }
 
-input[type="submit"]:hover {
-    transform: scale(1.2);
+.customHover:hover {
+    transform: scale(1.1);
     cursor: pointer;
 }
