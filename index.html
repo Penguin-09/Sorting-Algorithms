@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Visualizing Sorting Algorithms</title>
+        <title>Visualized Sorting Algorithms</title>
         <!-- Poppins Font -->
         <link
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
@@ -20,7 +20,7 @@
         class="flex flex-col items-center p-5 bg-slate-900 text-gray-400 text-center"
     >
         <!-- Title -->
-        <h1 class="text-4xl text-white">Visualizing Sorting Algorithms</h1>
+        <h1 class="text-4xl text-white">Visualized Sorting Algorithms</h1>
 
         <!-- Main -->
         <main
@@ -40,19 +40,17 @@
                     >
                         <h1 class="text-lg text-white">Current report</h1>
 
-                        <div class="flex gap-2 ps-4">
+                        <div class="flex justify-around gap-2">
                             <div class="text-end">
                                 <p>Algorithm</p>
-                                <p>Data size</p>
+                                <p>calculations</p>
                                 <p>delay</p>
-                                <p>time</p>
                             </div>
 
                             <div class="text-start text-white">
                                 <p id="algorithmReportCurrent">-</p>
-                                <p id="dataSizeReportCurrent">-</p>
+                                <p id="calculationsReportCurrent">-</p>
                                 <p id="delayReportCurrent">-</p>
-                                <p id="timeReportCurrent">-</p>
                             </div>
                         </div>
                     </div>
@@ -63,19 +61,17 @@
                     >
                         <h1 class="text-lg text-white">Previous report</h1>
 
-                        <div class="flex gap-2 ps-4">
+                        <div class="flex justify-around gap-2">
                             <div class="text-end">
                                 <p>Algorithm</p>
-                                <p>Data size</p>
+                                <p>calculations</p>
                                 <p>delay</p>
-                                <p>time</p>
                             </div>
 
                             <div class="text-start text-white">
                                 <p id="algorithmReportPrevious">-</p>
-                                <p id="dataSizeReportPrevious">-</p>
+                                <p id="calculationsReportPrevious">-</p>
                                 <p id="delayReportPrevious">-</p>
-                                <p id="timeReportPrevious">-</p>
                             </div>
                         </div>
                     </div>
@@ -89,7 +85,7 @@
                     <div class="flex flex-col gap-1">
                         <label for="dataSize">Data Size</label>
                         <input
-                            class="w-50 p-1 rounded-md text-center bg-slate-700"
+                            class="w-50 p-1 rounded-md text-center text-white bg-slate-700"
                             type="number"
                             id="dataSize"
                             name="dataSize"
@@ -103,7 +99,7 @@
                     <div class="flex flex-col gap-1">
                         <label for="delay">Delay in MS</label>
                         <input
-                            class="w-50 p-1 rounded-md text-center bg-slate-700"
+                            class="w-50 p-1 rounded-md text-center text-white bg-slate-700"
                             type="number"
                             id="delay"
                             name="delay"
@@ -128,13 +124,32 @@
                     </div>
                 </div>
 
-                <!-- Submit -->
-                <input
-                    type="submit"
-                    value="Sort!"
-                    class="p-3 px-6 mt-3 rounded-md text-white bg-sky-600 customHover"
-                    id="submitButton"
-                />
+                <div class="flex flex-wrap justify-center gap-3 mt-3">
+                    <!-- Submit -->
+                    <input
+                        type="submit"
+                        value="Sort!"
+                        class="p-3 px-6 rounded-md text-white bg-sky-600 customHover"
+                        id="submitButton"
+                    />
+
+                    <!-- Stop -->
+                    <button
+                        class="p-3 px-6 rounded-md text-white bg-sky-600 opacity-50 cursor-not-allowed"
+                        disabled="true"
+                        id="stopButton"
+                    >
+                        Stop
+                    </button>
+
+                    <!-- Reshuffle -->
+                    <button
+                        class="p-3 px-6 rounded-md text-white bg-sky-600 customHover"
+                        id="reshuffleButton"
+                    >
+                        Reshuffle
+                    </button>
+                </div>
             </form>
         </main>
 
