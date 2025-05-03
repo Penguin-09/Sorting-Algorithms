@@ -1,3 +1,5 @@
+import { generateColumnTint } from "./main.js";
+
 /**
  * Selection Sort sorts an array by taking the lowest number from the unsorted part and puts it at the end of the sorted part
  * @param {array} data Shuffled array of numbers
@@ -62,6 +64,14 @@ export async function selectionSort(
             smallestColumn.style.height = `${
                 (firstValue / data.length) * 100
             }%`;
+
+            // Update tint
+            firstColumn.style.backgroundColor = generateColumnTint(
+                smallestValue / data.length
+            );
+            smallestColumn.style.backgroundColor = generateColumnTint(
+                firstValue / data.length
+            );
 
             // Update IDs to match their new values
             firstColumn.id = `column-${smallestValue}`;

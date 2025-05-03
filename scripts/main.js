@@ -34,6 +34,22 @@ function fillAndShuffleData(dataSize) {
 }
 
 /**
+ * Generate a color tint for the columns based on the value
+ * @param {int} value The value and height of the column
+ * @returns {string} The color tint for the column
+ */
+export function generateColumnTint(value) {
+    const light = { r: 124, g: 139, b: 161 };
+    const dark = { r: 61, g: 75, b: 95 };
+
+    const r = Math.round(light.r + (dark.r - light.r) * value);
+    const g = Math.round(light.g + (dark.g - light.g) * value);
+    const b = Math.round(light.b + (dark.b - light.b) * value);
+
+    return `rgb(${r}, ${g}, ${b})`;
+}
+
+/**
  * Draw the graph on the canvas
  * @param {array} data Shuffled array of numbers
  */
@@ -43,9 +59,12 @@ function drawGraph(data) {
 
     for (let i = 0; i < data.length; i++) {
         const column = document.createElement("div");
-        column.classList.add("rounded", "rounded-b-none", "bg-slate-600");
+        column.classList.add("rounded", "rounded-b-none");
         column.style.height = `${(data[i] / data.length) * 100}%`;
         column.style.width = `${100 / data.length}%`;
+        column.style.backgroundColor = generateColumnTint(
+            data[i] / data.length
+        );
         column.id = `column-${data[i]}`;
 
         canvas.appendChild(column);
